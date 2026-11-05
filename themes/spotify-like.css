@@ -1,0 +1,424 @@
+/* ───────────────────────────────────────────────────────────────
+   "Night Shift" — a streaming-app style theme for Monochrome.
+   Paste into Settings → Appearance → Theme Store → Upload.
+   ─────────────────────────────────────────────────────────────── */
+
+:root,
+html:root[data-theme] {
+    --background: #000000;
+    --foreground: #ffffff;
+    --card: #121212;
+    --card-foreground: #ffffff;
+    --border: #2a2a2a;
+    --primary: #2ee27a;
+    --primary-foreground: #000000;
+    --secondary: #1f1f1f;
+    --secondary-foreground: #ffffff;
+    --muted: #242424;
+    --muted-foreground: #b3b3b3;
+    --highlight: #2ee27a;
+    --highlight-rgb: 46, 226, 122;
+    --ring: #ffffff;
+    --radius: 8px;
+    --font-family: 'Figtree', 'Inter', system-ui, sans-serif;
+    --panel: #121212;
+    --hover: rgba(255, 255, 255, 0.07);
+    color-scheme: dark;
+}
+
+html body {
+    background: #000;
+    color: #fff;
+}
+
+/* ── Shell: rounded panels on a black canvas ─────────────────── */
+@media (min-width: 769px) {
+    html body .app-container {
+        gap: 8px;
+        padding: 8px 8px 0;
+        background: #000;
+    }
+
+    html body .sidebar {
+        background: var(--panel);
+        border: 0;
+        border-radius: 8px;
+        padding: 16px 12px;
+        margin-bottom: 104px;
+    }
+
+    html body .main-content {
+        background: var(--panel);
+        border-radius: 8px;
+        margin-bottom: 104px;
+        padding: 16px 24px !important;
+        padding-bottom: 48px !important;
+    }
+
+    /* Player docked to the bottom edge instead of floating */
+    html body .now-playing-bar {
+        left: 0 !important;
+        right: 0 !important;
+        width: auto !important;
+        bottom: 0 !important;
+        height: 96px !important;
+        border-radius: 0 !important;
+        border: 0 !important;
+        background: #000 !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+        padding: 8px 16px !important;
+        animation: none !important;
+    }
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────── */
+html body .sidebar-logo {
+    padding: 0 12px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+html body .sidebar-nav .nav-item a {
+    color: #b3b3b3;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+html body .sidebar-nav .nav-item a:hover {
+    color: #fff;
+    background: var(--hover);
+}
+
+html body .sidebar-nav .nav-item a.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+html body .sidebar-nav-bottom {
+    background: transparent;
+    border-top-color: #2a2a2a;
+}
+
+/* ── Header & search ─────────────────────────────────────────── */
+html body .search-bar input,
+html body .main-header input[type='search'],
+html body .main-header input[type='text'] {
+    background: #1f1f1f !important;
+    border: 1px solid transparent !important;
+    border-radius: 500px !important;
+    color: #fff !important;
+    font-size: 15px;
+}
+
+html body .search-bar input:hover {
+    background: #2a2a2a !important;
+    border-color: #3e3e3e !important;
+}
+
+html body .search-bar input:focus {
+    border-color: #fff !important;
+    box-shadow: none !important;
+}
+
+html body .search-bar input::placeholder {
+    color: #b3b3b3;
+}
+
+/* ── Headings ────────────────────────────────────────────────── */
+html body h1,
+html body h2,
+html body .section-title {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+/* ── Tabs become pill chips ──────────────────────────────────── */
+html body .search-tabs {
+    border-bottom: 0;
+    gap: 8px;
+}
+
+html body .search-tab {
+    border: 0 !important;
+    border-radius: 500px !important;
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 14px;
+}
+
+html body .search-tab:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+html body .search-tab.active {
+    background: #fff;
+    color: #000;
+}
+
+/* ── Cards ───────────────────────────────────────────────────── */
+html body .card {
+    background: transparent;
+    border: 0;
+    padding: 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+html body .card:hover {
+    background: #1f1f1f;
+    transform: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+html body .card-image-wrapper {
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+html body .card:hover .card-image {
+    transform: none;
+}
+
+html body .card.artist .card-image-wrapper {
+    border-radius: 50%;
+}
+
+html body .card-title {
+    font-weight: 700;
+}
+
+html body .card-subtitle {
+    color: #b3b3b3;
+}
+
+html body .card-play-btn {
+    background: var(--primary) !important;
+    color: #000 !important;
+    width: 48px !important;
+    height: 48px !important;
+    right: 8px !important;
+    bottom: 8px !important;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+html body .card-play-btn:hover {
+    transform: scale(1.06) translateY(0) !important;
+    filter: none;
+}
+
+/* ── Track lists ─────────────────────────────────────────────── */
+html body .track-item {
+    border: 0;
+    border-radius: 4px;
+}
+
+html body .track-item:hover {
+    background: var(--hover);
+    transform: none;
+}
+
+html body .track-item:active {
+    transform: none;
+}
+
+html body .track-item.playing {
+    background: transparent;
+    border-left: 0;
+    padding-left: var(--spacing-md);
+}
+
+html body .track-item.playing .track-item-details .title {
+    color: var(--primary);
+}
+
+html body .track-item .artist,
+html body .track-item-duration {
+    color: #b3b3b3;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+html body .btn-primary {
+    background: var(--primary);
+    color: #000;
+    font-weight: 700;
+    box-shadow: none;
+}
+
+html body .btn-primary:hover {
+    transform: scale(1.04);
+    box-shadow: none;
+    filter: brightness(1.08);
+}
+
+html body .btn-secondary {
+    background: transparent;
+    border: 1px solid #7c7c7c;
+    color: #fff;
+    border-radius: 500px;
+    font-weight: 700;
+}
+
+html body .btn-secondary:hover {
+    border-color: #fff;
+    transform: scale(1.04);
+}
+
+/* Big play buttons on album / playlist / artist pages */
+html body #play-album-btn,
+html body #play-playlist-btn,
+html body #play-artist-btn,
+html body .detail-header-actions .btn-primary:first-child {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0;
+    gap: 0;
+}
+
+html body #play-album-btn svg,
+html body #play-playlist-btn svg,
+html body #play-artist-btn svg,
+html body .detail-header-actions .btn-primary:first-child svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ── Album / playlist / artist headers ───────────────────────── */
+html body .detail-header {
+    align-items: flex-end;
+    gap: 24px;
+}
+
+html body .detail-header-image,
+html body .detail-header-collage {
+    width: 232px;
+    height: 232px;
+    border-radius: 6px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.6);
+}
+
+html body .detail-header h1,
+html body .detail-header .title {
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+/* ── Player bar ──────────────────────────────────────────────── */
+html body .now-playing-bar .track-info .title {
+    font-weight: 600;
+    color: #fff;
+}
+
+html body .now-playing-bar .track-info .artist {
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+html body .now-playing-bar .cover {
+    border-radius: 4px;
+}
+
+html body .player-controls .buttons button {
+    color: #b3b3b3;
+}
+
+html body .player-controls .buttons button:hover {
+    color: #fff;
+    background: transparent;
+}
+
+html body .player-controls .buttons button.active {
+    color: var(--primary);
+}
+
+html body .player-controls .buttons .play-pause-btn,
+html body .player-controls .buttons .play-pause-btn:hover,
+html body .player-controls .buttons .play-pause-btn:active {
+    background: #fff !important;
+    color: #000 !important;
+    width: 32px;
+    height: 32px;
+}
+
+html body .progress-bar,
+html body .progress-bar:hover,
+html body .volume-controls .volume-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+html body .progress-bar .progress-fill,
+html body .volume-controls .volume-bar .volume-fill {
+    background: #fff;
+    border-radius: 2px;
+}
+
+html body .progress-bar:hover .progress-fill,
+html body .volume-controls .volume-bar:hover .volume-fill {
+    background: var(--primary);
+}
+
+html body .player-controls .progress-container {
+    max-width: 600px;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+/* ── Liked hearts use the accent ────────────────────────────── */
+html body .heart-icon.filled,
+html body .like-btn:hover .heart-icon {
+    color: var(--primary) !important;
+    fill: var(--primary) !important;
+    stroke: var(--primary) !important;
+}
+
+html body .card-like-btn.active {
+    color: var(--primary) !important;
+}
+
+/* ── Phones ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    html body .now-playing-bar {
+        background: #242424 !important;
+        border: 0 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+        backdrop-filter: none !important;
+    }
+
+    html body .sidebar {
+        background: #121212;
+        border: 0;
+    }
+
+    html body .card {
+        padding: 8px;
+    }
+
+    html body #page-library .search-tabs,
+    html body .search-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 8px;
+    }
+
+    html body #page-library .search-tab,
+    html body .search-tab {
+        flex: none;
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+
+/* ── Scrollbars ──────────────────────────────────────────────── */
+* {
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    scrollbar-width: thin;
+}
